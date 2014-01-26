@@ -1,0 +1,18 @@
+Event Bubbling and Capturing
+CallBacks / Anonymous functions
+Closures
+Function Overloading
+OOPs in Javascript
+  Prototype
+  Prototype Inheritance
+  Class in Javascript
+Module Pattern
+Jquery
+  Jquery Widget Impelementation
+  Jquery Plug-in Implementation
+  Jquery Plug-In Vs. Jquery Widget
+
+
+
+
+http://www.deadosaurus.com/detect-a-usb-barcode-scanner-with-javascript/
