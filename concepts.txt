@@ -8,7 +8,6 @@ OOPs in Javascript
   Class in Javascript
 Module Pattern
 Jquery
-  Jquery Widget Impelementation
   Jquery Plug-in Implementation
   Jquery Plug-In Vs. Jquery Widget
 
