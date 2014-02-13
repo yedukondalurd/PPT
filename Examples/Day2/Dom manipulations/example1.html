@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html Dom manipulation|Example 1</title>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.post("tpl/html1.html", function (data) {
+                $('.add_content_html').html(data);
+            });
+        });
+    </script>
+    <style>
+        a {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="add_content_html">
+
+</div>
+</body>
+</html>
