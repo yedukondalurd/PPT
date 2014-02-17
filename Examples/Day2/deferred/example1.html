@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Deferred demo</title>
+    <style>
+    </style>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script>
+        function getPromise() {
+            var deferred = $.Deferred();
+
+            setTimeout(function () {
+                deferred.resolve("Hello World");
+            }, 1000);
+
+            return deferred.promise();
+        }
+
+        $.when(getPromise()).done(function (value) {
+            alert(value);
+        });
+    </script>
+</head>
+<body>
+<div>
+
+</div>
+
+
+</body>
+</html>

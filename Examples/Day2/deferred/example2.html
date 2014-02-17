@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Deferred demo</title>
+    <style>
+    </style>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script>
+        function getReady() {
+            var deferredReady = $.Deferred();
+            $(document).ready(function () {
+                deferredReady.resolve('Dom Ready');
+            });
+            return deferredReady.promise();
+        }
+
+        var firstRequest = $.ajax({ url: 'test.php' }),
+                secondRequest = $.ajax({ url: 'file2.html' });
+
+        $.when(getReady(), firstRequest, secondRequest
+                ).done(function (readyResponse, firstResponse, secondResponse) {
+                    var insertDiv1 = $('<div></div>');
+                    insertDiv1.html($(firstResponse[0]).html());
+                    var insertDiv2 = $('<div></div>');
+                    insertDiv2.html($(secondResponse[0]).html());
+                    $('body').append(insertDiv1, '<hr/>', insertDiv2);
+                });
+    </script>
+</head>
+<body>
+<div>
+
+</div>
+
+
+</body>
+</html>
