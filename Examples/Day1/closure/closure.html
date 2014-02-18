@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback and Anonymous function</title>
+    <script>
+        function showName(firstName) {
+            var nameIntro = "Your name is: ";
+
+            function makeFullName(lastName) {
+                return nameIntro + firstName + " " + lastName;
+            }
+
+            return makeFullName;
+        }
+        var getFullName = showName('Chandra');
+        document.write(getFullName('Shekar'));
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

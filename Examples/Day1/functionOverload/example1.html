@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Overload Example</title>
+    <script>
+        var ninja = {};
+        ninja.attack = function () {
+            var argumentsLength = arguments.length;
+            switch (true) {
+                case (argumentsLength === 1):
+                    document.write('<b>Attack 1 person: </b>' + arguments[0]);
+                    break;
+                case (argumentsLength === 2):
+                    document.write('<b>Attack 2 people: </b>' + arguments[0] + ", " + arguments[1]);
+                    break;
+                case (argumentsLength > 2):
+                    throw "<b>Wrong number of arguments.</b>";
+                    break;
+                default:
+                    document.write('<b>Attack no args</b>');
+            };
+        };
+        try {
+            ninja.attack.call(this, "Person1", "Person2", "Person3");
+        } catch (e) {
+            document.write("<b>Error: attack </b>" + e);
+        }
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

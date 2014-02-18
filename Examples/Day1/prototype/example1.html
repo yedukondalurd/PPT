@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prototype Example</title>
+    <script>
+        function Animal() {
+            this.name = "Elephant";
+        }
+        var obj1 = new Animal();
+        var obj2 = new Animal();
+        Animal.prototype.age = function (age) {
+            return age;
+        };
+        document.write(obj1.age('10 Years') + '<br/>');
+        document.write(obj1.age('5 Years'));
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

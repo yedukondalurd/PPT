@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance Example</title>
+    <script>
+        function Person() {
+            this.name = 'Person';
+            this.email = 'Person Email';
+        }
+
+        Person.prototype.set_email = function (email) {
+            this.email = email;
+        };
+        Person.prototype.set_name = function (name) {
+            this.name = name;
+        };
+        function Employee() {
+            this.name = '';
+            this.age = '25';
+        }
+
+        Employee.prototype = new Person();
+        Employee.prototype.gender = '';
+        Employee.prototype.set_gender = function (gender) {
+            this.gender = gender;
+        };
+        var empObj = new Employee();
+        empObj.set_email('xyz@gmail.com');
+        document.write(empObj.email);
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

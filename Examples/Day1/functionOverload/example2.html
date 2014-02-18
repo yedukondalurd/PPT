@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Overload Example</title>
+    <script>
+
+        function addMethod(object, name, fn) {
+            var old = object[name];
+            object[name] = function () {
+                if (fn.length == arguments.length) {
+                    return fn.apply(this, arguments);
+                }
+                else if (typeof old == 'function') {
+                    return old.apply(this, arguments);
+                }
+                else {
+                    throw "Wrong number of args";
+                }
+            };
+        }
+        var ninja = {};
+        addMethod(ninja, 'attack', function () {
+            document.write("<b>Attack no args</b><br/>");
+        });
+        addMethod(ninja, 'attack', function (x) {
+            document.write('<b>Attack 1 person: </b>' + x + "<br/>");
+        });
+        addMethod(ninja, 'attack', function (x, y) {
+            document.write("<b>Attack 2 people: </b>" + x + ", " + y + "<br/>");
+        });
+        ninja.attack();
+        ninja.attack("Person1");
+        ninja.attack("Person1", "Person2");
+        try {
+            ninja.attack("Person1", "Person2", "Person3");
+        } catch (e) {
+            document.write("<b>ERROR: attack: </b>" + e);
+        }
+
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
