@@ -15,7 +15,7 @@
             return deferredReady.promise();
         }
 
-        var firstRequest = $.ajax({ url: 'test.php' }),
+        var firstRequest = $.ajax({ url: 'file1.html' }),
                 secondRequest = $.ajax({ url: 'file2.html' });
 
         $.when(getReady(), firstRequest, secondRequest
@@ -29,10 +29,5 @@
     </script>
 </head>
 <body>
-<div>
-
-</div>
-
-
 </body>
 </html>

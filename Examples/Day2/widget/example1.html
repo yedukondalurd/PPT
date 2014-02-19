@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Training</title>
+    <link href="../css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="../js/jquery.toolTip.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.show-tooltip').toolTip();
+        });
+    </script>
+    <style>
+        .tool-tip-container {
+            display: inline-block;
+            position: absolute;
+            color: #111;
+            border: 1px solid #DCA;
+            background: #fffAF0;
+            top: 15px;
+            margin-left: 2px;
+            padding: 10px;
+        }
+        body{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="progress-bar">
+    <a href="#" class="show-tooltip" data-title="First tooltip text">Hello</a>
+
+    <a href="#" class="show-tooltip" data-title="Second tooltip text">Hi</a>
+</div>
+</body>
+</html>

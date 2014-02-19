@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Module Pattern Example</title>
+    <script>
+        var feature = (function () {
+
+            // private variables and functions
+            var privateThing = "secret";
+            var publicThing = "not secret";
+
+            var changePrivateThing = function () {
+                privateThing = "super secret";
+            };
+
+            var sayPrivateThing = function () {
+                changePrivateThing();
+            };
+
+            // public API
+            return {
+                publicThing: publicThing,
+                sayPrivateThing: sayPrivateThing
+            };
+
+        })();
+
+        document.write(feature.publicThing);
+        feature.sayPrivateThing();
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
