@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback and Anonymous function</title>
+    <script>
+        var allUserData = [];
+        function getInput(options, callback) {
+            allUserData.push(options);
+            callback(options);
+        }
+        var obj = {name: "Rich", speciality: "JavaScript"};
+        getInput(obj, function (userData) {
+            if (typeof userData === "string") {
+                document.write(userData);
+            }
+            else if (typeof userData === "object") {
+                for (var key in userData) {
+                    document.write("<b>" + key + "</b>" + ": " + userData[key] + "<br/>");
+                }
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

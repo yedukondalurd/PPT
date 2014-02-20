@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Deferred demo</title>
+    <style>
+        body {
+            font-size: 30px;
+        }
+    </style>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script>
+        function A() {
+            var setVarValue = '';
+            $.ajax({
+                type: 'post',
+                url: 'personalInfo.php',
+                data: {'name': 'Raju'},
+                success: function (response) {
+                    if (response === 'success') {
+                        setVarValue = 'User successfully saved.';
+                    } else {
+                        setVarValue = '';
+                    }
+                }
+            });
+            return setVarValue;
+        }
+
+        function B() {
+            var getVarValue = A();
+            if (getVarValue !== '') {
+                document.write(getVarValue);
+            } else {
+                document.write('User registration failed. Please try again.');
+            }
+        }
+        B();
+    </script>
+</head>
+<body>
+</body>
+</html>
