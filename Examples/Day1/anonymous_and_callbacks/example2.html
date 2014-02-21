@@ -4,12 +4,12 @@
     <title>Callback and Anonymous function</title>
     <script>
         var allUserData = [];
-        function getInput(options, callback) {
+        function saveUserData(options, callback) {
             allUserData.push(options);
             callback(options);
         }
         var obj = {name: "Rich", speciality: "JavaScript"};
-        getInput(obj, function (userData) {
+        saveUserData(obj, function (userData) {
             if (typeof userData === "string") {
                 document.write(userData);
             }
