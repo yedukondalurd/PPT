@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Html Dom manipulation|Example 1</title>
+    <title>Html Dom manipulation|Example 2</title>
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.post("tpl/html1.html", function (data) {
-                $('.add_content_html').html(data);
+            $('.append_div').click(function () {
+                $('.div_1').append($('.div_2'));
+                return false;
             });
         });
     </script>
     <style>
-        a {
-            margin-right: 5px;
+        .div_1 {
+            border: 5px solid green;
+        }
+
+        div {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .div_2 {
+            border: 5px solid greenyellow;
+        }
+
+        body {
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
-<div class="add_content_html">
-
+<div class="div_1">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 </div>
+<div class="div_2">
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+</div>
+<a href="#" class="append_div">Append Div</a>
 </body>
 </html>

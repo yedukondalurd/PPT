@@ -8,18 +8,17 @@
     <script src="../js/jquery-ui-1.10.4.custom.min.js"></script>
     <style>
         .toggler {
-            width: 500px;
             height: 200px;
             position: relative;
         }
 
-        #button {
+        a {
             padding: .5em 1em;
             text-decoration: none;
         }
 
         #effect {
-            width: 240px;
+            width: 50%;
             height: 150px;
             padding: 0.4em;
             position: relative;
@@ -31,6 +30,10 @@
             padding: 0.4em;
             text-align: center;
         }
+
+        body {
+            font-size: 20px;
+        }
     </style>
     <script>
         $(function () {
@@ -40,16 +43,24 @@
                     $("#effect").animate({
                         backgroundColor: "#aa0000",
                         color: "#fff",
-                        width: 500
+                        width: '100%'
                     }, 1000);
                 } else {
                     $("#effect").animate({
                         backgroundColor: "#fff",
                         color: "#000",
-                        width: 240
+                        width: '50%'
                     }, 1000);
                 }
                 state = !state;
+                return false;
+            });
+            $("#hide_paragraph").click(function () {
+                $('p').hide(4000);
+                return false;
+            });
+            $("#show_paragraph").click(function () {
+                $('p').show(4000);
                 return false;
             });
         });
@@ -67,6 +78,8 @@
         </p>
     </div>
 </div>
-<a href="#" id="button" class="ui-state-default ui-corner-all">Toggle Effect</a>
+<a href="#" id="button" class="ui-state-default ui-corner-all">Animate</a>
+<a href="#" id="hide_paragraph" class="ui-state-default ui-corner-all">Hide Paragraph</a>
+<a href="#" id="show_paragraph" class="ui-state-default ui-corner-all">Show Paragraph</a>
 </body>
 </html>
