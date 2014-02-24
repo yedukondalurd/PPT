@@ -17,7 +17,7 @@
             return deferred.promise();
         }
 
-        $.when(getPromise()).done(function (value) {
+        getPromise().done(function (value) {
             alert(value);
         });
     </script>
