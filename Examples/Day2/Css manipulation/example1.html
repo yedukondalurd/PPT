@@ -5,9 +5,38 @@
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function () {
-
+            $('.add_style').click(function () {
+                $('.div_1').css({
+                    'background-color': 'green',
+                    'font-size': '40px',
+                    'color': 'white'
+                });
+                $('.div_2').css({
+                    'background-color': 'greenyellow',
+                    'font-size': '40px'
+                });
+                return false;
+            });
         });
     </script>
+    <style>
+        .div_1 {
+            border: 5px solid green;
+        }
+
+        div {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .div_2 {
+            border: 5px solid greenyellow;
+        }
+
+        body {
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
 <div class="div_1">
@@ -17,5 +46,6 @@
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
     when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 </div>
+<a href="#" class="add_style">Add Style</a>
 </body>
 </html>

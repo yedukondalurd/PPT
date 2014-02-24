@@ -1,5 +1,5 @@
 /**
- * Created by yedukondalu.v on 2/11/14.
+ * Created by yedukondalu.v on.
  */
 (function ($) {
     $.fn.highlightText = function (options) {
